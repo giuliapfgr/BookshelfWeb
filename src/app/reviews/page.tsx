@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center">
       <NavBar/>
-      <h1>Perfil</h1>
+      <h1>Reviews</h1>
     </main>
   );
 }
