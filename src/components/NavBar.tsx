@@ -3,7 +3,9 @@ import Link from "next/link";
 export default function NavBar(){
     return(
         <nav className="flex bg-cyan-900 w-full justify-between items-center px-60 py-4">
-        <h1 className="text-4xl">Bookshelf</h1>
+        <div>
+          <img src="/logobranco.png" alt="logo" width={200} height={50}/>
+        </div>
         <ul className="flex gap-6">
           <li><Link href="/dashboard">dashboard</Link></li>
           <li><Link href="/reviews">reviews</Link></li>
