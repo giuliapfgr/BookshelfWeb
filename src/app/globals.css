@@ -26,6 +26,19 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.custom-button-style {
+  background-color: #01204E;
+  color: white;
+  border-color: #01204E;
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+.custom-button-style:hover {
+  background-color: #001832;
+  border-color: #001832;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
