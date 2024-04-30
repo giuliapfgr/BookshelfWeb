@@ -31,6 +31,10 @@ body {
   border-color: #001832;
 }
 
+.custom-input input {
+  color: black; 
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

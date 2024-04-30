@@ -2,6 +2,8 @@ import NavBar from "@/components/NavBar";
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
 import { LivroItem } from "./LivroItem";
+import { getLivros } from "./actions/livros/get";
+import { Plus } from "lucide-react";
 
 interface Livro {
         id: number,
@@ -14,18 +16,10 @@ interface Livro {
         capa: string
 }
 
-export default function Home(){
 
-{/*
 export default async function Livros() {
-
-  async function getLivros() {
-    const resp = await fetch("https://localhost:8080", {next: {revalidate:8} })
-    return await resp.json()
-  }
-
   const livros: Livro[] = await getLivros()
-*/}
+
   const user = {
     name: "Nome do Usuário",
     bio: "Bio do usuário"
@@ -50,17 +44,17 @@ export default async function Livros() {
         </div>
 
         <div className="ml-80">
-          <Link href="/new">
-            <Button color="primary" size="lg" className="custom-button-style">
+        <Link href="/new">
+            <Button startContent={<Plus size={18} />} color="primary" size="lg" className="custom-button-style">
               Adicionar livro
             </Button>
           </Link>
         </div>
       </div>
-{/*
+
       {livros.map(livros => <LivroItem livro={livros} />)}
 
-       <section className="flex flex-col gap-6 mt-6 p-6" style={{ backgroundColor: "#FAAA68", minWidth: "500px" }}>
+ {/*    <section className="flex flex-col gap-6 mt-6 p-6" style={{ backgroundColor: "#FAAA68", minWidth: "500px" }}>
         <div className="flex justify-between items-center">
           <div className="flex items-center"></div>
         </div>
