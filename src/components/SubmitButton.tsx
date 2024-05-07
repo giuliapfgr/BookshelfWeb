@@ -14,7 +14,7 @@ export function SubmitButton(){
             isLoading={pending}
             startContent={<Check size={18} />}
         >
-            Salvar
+            salvar
         </Button>
     )
 }

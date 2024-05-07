@@ -17,7 +17,7 @@ export function LivroSelect({livro}: LivroSelectProps){
             labelPlacement="outside"
         >
             {(livro) => 
-                <SelectItem key={livro.id} startContent={livro.nome}>
+                <SelectItem key={livro.id}>
                     {livro.nome}
                 </SelectItem>
             }

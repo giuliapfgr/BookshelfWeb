@@ -15,7 +15,8 @@ export async function update(prevState: any, formData: FormData) {
         paginas: formData.get("paginas"),
         autor: formData.get("autor"),
         editora: formData.get("editora"),
-        data: formData.get("data"),
+        dataPublicacao: formData.get("dataPublicacao"),
+        capa: formData.get("capa")
     }
 
     const options ={
@@ -26,10 +27,10 @@ export async function update(prevState: any, formData: FormData) {
         }
     }
 
-    const resp = await fetch("http://localhost:3000/" + id, options)
+    const resp = await fetch("http://localhost:8080/livro/" + id, options)
 
     if(resp.ok){
-        redirect("http://localhost:3000/")
+        redirect("/")
     }
 
     if (!resp.ok){

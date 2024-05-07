@@ -5,6 +5,6 @@ interface Livro {
     paginas: number,
     autor: string,
     editora: string,
-    data: number,
+    dataPublicacao: Date,
     capa: string
 }

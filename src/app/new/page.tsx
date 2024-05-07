@@ -27,6 +27,8 @@ export default function FormLivros() {
             name="nome"
             labelPlacement="outside"
             className="custom-input"
+            isInvalid={state?.message != ""}
+            errorMessage={state?.message}
       />
       <Input
             key="genero"
@@ -34,20 +36,26 @@ export default function FormLivros() {
             name="genero"
             labelPlacement="outside"
             className="custom-input"
+            isInvalid={state?.message != ""}
+            errorMessage={state?.message}
       />
       <Input
             key="paginas"
             label="Total de páginas:"
-            name="nome"
+            name="paginas"
             labelPlacement="outside"
             className="custom-input"
+            isInvalid={state?.message != ""}
+            errorMessage={state?.message}
       />
       <Input
             key="autor"
             label="Autor:"
-            name="nome"
+            name="autor"
             labelPlacement="outside"
             className="custom-input"
+            isInvalid={state?.message != ""}
+            errorMessage={state?.message}
       />
       <Input
             key="editora"
@@ -55,22 +63,35 @@ export default function FormLivros() {
             name="editora"
             labelPlacement="outside"
             className="custom-input"
+            isInvalid={state?.message != ""}
+            errorMessage={state?.message}
       />
       <Input
-            key="data"
+            key="dataPublicacao"
             label="Data de publicação:"
-            name="data"
+            name="dataPublicacao"
             labelPlacement="outside"
             className="custom-input"
+            isInvalid={state?.message != ""}
+            errorMessage={state?.message}
+      />
+      <Input
+            key="capa"
+            label="Capa do livro:"
+            name="capa"
+            labelPlacement="outside"
+            className="custom-input"
+            isInvalid={state?.message != ""}
+            errorMessage={state?.message}
       />
 
-    <div className="flex justify-around mt-4">
-      <Link href="/">
-        <Button variant="bordered" startContent={<ArrowLeft size={18} />}>cancelar</Button>
-      </Link>
+      <div className="flex justify-around mt-4">
+        <Link href="/">
+          <Button variant="bordered" startContent={<ArrowLeft size={18} />}>cancelar</Button>
+        </Link>
 
-      <SubmitButton />
-    </div>
+        <SubmitButton />
+      </div>
     </form>
     </main>
   );

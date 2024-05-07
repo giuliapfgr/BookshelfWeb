@@ -1,24 +1,23 @@
 import NavBar from "@/components/NavBar";
 import { Button } from "@nextui-org/button";
-import Link from "next/link";
 import { LivroItem } from "./LivroItem";
-import { getLivros } from "./actions/livros/get";
-import { Plus } from "lucide-react";
+import { getLivro } from "./actions/livros/get";
+import Link from "next/link";
 
 interface Livro {
         id: number,
         nome: string,
-        genero: string,
+        genero: string[],
         paginas: number,
         autor: string,
         editora: string,
-        data: number,
+        dataPublicacao: Date,
         capa: string
 }
 
 
-export default async function Livros() {
-  const livros: Livro[] = await getLivros()
+export default async function Livro() {
+  const livro: Livro[] = await getLivro()
 
   const user = {
     name: "Nome do Usuário",
@@ -44,15 +43,32 @@ export default async function Livros() {
         </div>
 
         <div className="ml-80">
-        <Link href="/new">
-            <Button startContent={<Plus size={18} />} color="primary" size="lg" className="custom-button-style">
+          <Link href="/new">
+            <Button color="primary" size="lg" className="custom-button-style">
               Adicionar livro
             </Button>
           </Link>
         </div>
       </div>
 
-      {livros.map(livros => <LivroItem livro={livros} />)}
+      <div>
+      <div className="flex justify-center background-color">
+        <div className="text-stone-900 flex items-center border-b border-stone-900 w-2/3 mt-8" style={{ backgroundColor: "#FAAA68", minWidth: "500px" }}>
+          <div className="w-1/3 text-center">Título</div>
+          <div className="w-1/3 text-center">Gênero</div>
+          <div className="w-1/3 text-center">Páginas</div>
+          <div className="w-1/3 text-center">Autor</div>
+          <div className="w-1/3 text-center">Editora</div>
+          <div className="w-1/3 text-center">Data de publicação</div>
+          <div className="w-1/3 text-center">Imagem de capa</div>
+        </div>
+      </div>
+        <div className="text-stone-900">
+          {livro.map(livro => <LivroItem livro={livro} />)}
+        </div>
+      </div>
+
+      
 
  {/*    <section className="flex flex-col gap-6 mt-6 p-6" style={{ backgroundColor: "#FAAA68", minWidth: "500px" }}>
         <div className="flex justify-between items-center">
